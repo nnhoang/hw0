@@ -10,12 +10,12 @@ Malty Scootch" does not.
 
 def main():
     count = 0
-    my_file = open('iowa-liquor-sample.csv', 'r')
+    my_file = open("iowa-liquor-sample.csv", 'r')
     for line in my_file:
-        elements = [s.lower() for s in line.split(',')]
-        for e in elements:
-            if e == "single malty scotch":
-                count += 1
+        line = line.lower()
+        if line.find("single malt scotch") > 0:
+            count += 1
+    print(count)
 
 
 if __name__ == '__main__':
